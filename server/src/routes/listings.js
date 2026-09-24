@@ -9,6 +9,19 @@ import {
 
 const router = Router();
 
-// TODO: wire up the routes described in README.md section 3.
+// GET /api/listings - list all active listings
+router.get('/', getAllListings);
+
+// GET /api/listings/:id - get single listing
+router.get('/:id', getListing);
+
+// POST /api/listings - create a new listing
+router.post('/', createListing);
+
+// PATCH /api/listings/:id - update a listing
+router.patch('/:id', updateListing);
+
+// DELETE /api/listings/:id - soft delete a listing (sets status to 'removed')
+router.delete('/:id', deleteListing);
 
 export default router;
